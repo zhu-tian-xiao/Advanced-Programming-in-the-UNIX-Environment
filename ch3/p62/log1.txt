@@ -1,0 +1,2 @@
+log: hello world
+e second line

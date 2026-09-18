@@ -1,0 +1,7 @@
+*.bigfile
+
+
+# archives
+*.zip
+*.tar
+*.gz
