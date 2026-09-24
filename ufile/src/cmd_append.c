@@ -11,7 +11,7 @@
 int append(int source_fd, int destination_fd);
 int main(int argc, char *argv[]) {
   int status = EXIT_SUCCESS;
-  if (argc != 4 || strcmp(argv[1], "cp") != 0) {
+  if (argc != 4 || strcmp(argv[1], "append") != 0) {
     exit(EXIT_FAILURE);
   }
 
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
   }
 
   int destination_fd =
-      open(argv[3], O_WRONLY | O_CREAT, source_stat.st_mode & 0777);
+      open(argv[3], O_WRONLY | O_CREAT | O_APPEND, source_stat.st_mode & 0777);
   if (destination_fd == -1) {
     perror(argv[3]);
     close(source_fd);
@@ -46,15 +46,8 @@ int main(int argc, char *argv[]) {
 
   if (source_stat.st_ino == destination_stat.st_ino &&
       source_stat.st_dev == destination_stat.st_dev) {
-    fprintf(stderr, "ufile cp: \'%s\' and \'%s\' are the same file.\n", argv[2],
-           argv[3]);
-    close(source_fd);
-    close(destination_fd);
-    exit(EXIT_FAILURE);
-  }
-
-  if (ftruncate(destination_fd, 0) == -1) {
-    perror("ftruncate error");
+    fprintf(stderr, "ufile append: \'%s\' and \'%s\' are the same file.\n", argv[2],
+            argv[3]);
     close(source_fd);
     close(destination_fd);
     exit(EXIT_FAILURE);

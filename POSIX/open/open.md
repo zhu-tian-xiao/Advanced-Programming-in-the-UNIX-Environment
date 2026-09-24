@@ -34,4 +34,12 @@ By default, the new file descriptor is set to remain open across an execve(2) (i
 
 A call to open() creates a new **open file description**, an entry in the system-wide table of  open  files.   The open  file  description records **the file offset and the file status flags** (see below).  A file descriptor is a reference to an open file description; this reference is unaffected if pathname  is  subsequently  removed  or modified to refer to a different file.  For further details on open file descriptions, see NOTES.
 
+The  argument  flags  **must  include**  one of the following access modes: O_RDONLY, O_WRONLY, or O_RDWR.  These request opening the  file  read-only, write-only, or read/write, respectively.
+
+In addition, zero or more file creation flags and file status flags can be bitwise-or'd in flags. The  file  creation  flags  are  O_CLOEXEC, O_CREAT,  O_DIRECTORY,  O_EXCL, O_NOCTTY,  O_NOFOLLOW,  O_TMPFILE, and O_TRUNC.  The file status flags are all of the remaining  flags listed below. The distinction between these two groups of flags is that the        file creation flags affect the semantics of the open operation  itself, while  the file status flags affect the semantics of subsequent I/O operations.  The file status flags can be retrieved and (in  some  cases) modified; see fcntl(2) for details.
+
+The full list of file creation flags and file status flags is as follows:
+
+The file is opened in append mode.  Before each write(2), the file offset is positioned at the end of the file, as if with lseek(2).  The modification of the file offset and the write operation are performed as a single atomic step.
+
 

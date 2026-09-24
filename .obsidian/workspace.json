@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ch4.md",
+                "file": "POSIX/open/open.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ch4"
+              "title": "open"
             }
           }
         ]
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ch4.md",
+                "file": "POSIX/open/open.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -187,19 +187,19 @@
   },
   "active": "481d648a4846168e",
   "lastOpenFiles": [
+    "ufile/src/cmd_append.c",
+    "ufile/src/cmd_cp",
+    "ufile/src/b.txt",
+    "ufile/src/c.txt",
+    "ufile/src/t.txt",
+    "ch4.md",
     "ch3/p72/a.bigfile",
     "ch4/p107/chmod",
     "ch4/p107/Makefile",
     "ch4/p104/a.txt",
     "ch4/p104/Makefile",
     "ch4/p104/Makefile copy",
-    "ch4/p103/access",
-    "ch4/p103/Makefile",
-    "ch4/p100/parent/child",
-    "ch4/p100/parent",
-    "ch4/p100",
     "ch3.md",
-    "ch4.md",
     "ch2.md",
     "ch3/p62/log1.md",
     "ch2/p41/README.md",
